@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Grupo 10 - Bafômetro Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -45.3, "left": -252.2, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 150,
+      "left": -230,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 130, "left": -150, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 230,
+      "left": -150,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "gas1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "gas1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "gas1:AOUT", "esp:34", "blue", [ "h0" ] ],
+    [ "esp:25", "r1:2", "orange", [ "h0" ] ],
+    [ "r1:1", "led1:A", "orange", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:26", "bz1:2", "gold", [ "h0" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
