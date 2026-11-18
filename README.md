@@ -6,6 +6,10 @@ O projeto busca contribuir com a meta 3.6 do ODS 3 da ONU (redução de mortes e
 
 Todo o protótipo é simulado no [Wokwi](https://wokwi.com), um simulador online de circuitos eletrônicos que executa o firmware real (C/C++ sobre o framework Arduino) com suporte a Wi-Fi e comunicação com a internet.
 
+## Vídeo de demonstração
+
+Vídeo com a apresentação do grupo e o protótipo funcionando em tempo real, com as mensagens MQTT chegando no HiveMQ (YouTube, não listado): [https://youtu.be/wqbNvESpGg8](https://youtu.be/wqbNvESpGg8)
+
 ## 1. Descrição do funcionamento e uso
 
 1. O ESP32 inicializa os atuadores (LED e buzzer desligados), conecta-se à rede Wi-Fi (no Wokwi, a rede `Wokwi-GUEST`) e ao broker MQTT público [HiveMQ](https://www.hivemq.com/) (`broker.hivemq.com`, porta 1883).
